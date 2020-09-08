@@ -218,7 +218,7 @@ const letter_grade = (score) => {
     return grade;
 }
 
-console.log(letter_grade(89));
+console.log(letter_grade(10));
   
   
 
@@ -227,8 +227,24 @@ console.log(letter_grade(89));
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
+const name = "Joe LaSatA";
+const vowels = ["a", "e", "i", "o", "u"]
 
+function count_vowels(string) {
+    // initate count
+    let count = 0;
+    // convert 'string' argument to lowercase
+    let text = string.toLowerCase();
+    // iterate through each letter of text variable and use .includes array method to check agains vowels array. If match +1 to count 
+    for(let i = 0; i < text.length; i++) {
+        if (vowels.includes(text[i])) {
+            count++;
+        }
+    }
+    console.log("Number of vowels:", count);
+}
 
+count_vowels(name);
 
 
 /************************************************************** Stretch **************************************************************/
