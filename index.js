@@ -55,6 +55,7 @@ const dogYears = (a) => {
     return a * 7;
 }
 
+//Test--
 console.log("Your age in dog years is:", dogYears(30), "years");
 
 
@@ -74,6 +75,32 @@ console.log("Your age in dog years is:", dogYears(30), "years");
 // 4 - 7 months 5% of their body weight 
 // 7 - 12 months 4% of their body weight
 
+function dog_feeder(age, weight) {
+    let feed = null;
+    if(age >= 1){
+        if(weight <= 5){
+            feed = weight * .05;
+        }else if(weight <= 10){
+            feed = weight * .04;
+        }else if(weight <= 15){
+            feed = weight * .03;
+        }else{
+            feed = weight * .02;
+        }
+    }else{
+        if(age <= .4){
+            feed = weight * .1;
+        }else if(age <= .7){
+            feed = weight * .05;
+        }else{
+            feed = weight * .04;
+        }
+    }
+    return feed;
+}
+
+//Test --
+console.log(dog_feeder(1, 15));
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
 
@@ -86,6 +113,44 @@ console.log("Your age in dog years is:", dogYears(30), "years");
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
+
+function RPS(play) {
+    let hand = null; 
+    let result = null;
+    // Math.floor rounds down to nearest whole number - Math.random returns a random value between 0 and 1 (inclusive of 0 but not 1). Math.random() * 3 will return a value between 0 and 2.97 so the probability isn't perfect but we're calling it good enough. 
+    // Hand Abstraction: Rock === 1, Paper === 2, Scissors === 3
+    const bot_hand = Math.floor(Math.random() * 3);
+    if(play === 'Rock') {
+        if(bot_hand === 0) {
+            result = 'Tie';
+        } else if(bot_hand === 1) {
+            result = 'Lose';
+        } else {
+            result = 'Win';
+        }
+    } else if(play === 'Paper') {
+        if(bot_hand === 0){
+            result = 'Win';
+        } else if(bot_hand === 1) {
+            result = 'Tie';
+        } else {
+            result = 'Lose';
+        }
+    } else {
+        if(bot_hand === 0){
+            result = 'Lose';
+        } else if(bot_hand === 1) {
+            result = 'Win';
+        } else {
+            result = 'Tie';
+        }
+    }
+    return result;
+}
+
+
+
+
 
   
   
