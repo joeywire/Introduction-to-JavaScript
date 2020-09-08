@@ -251,7 +251,42 @@ count_vowels(name);
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
+function RPS2(play) {
+    let result = null;
+    // Math.floor rounds down to nearest whole number - Math.random returns a random value between 0 and 1 (inclusive of 0 but not 1). Math.random() * 3 will return a value between 0 and 2.97 so the probability isn't perfect but we're calling it good enough. 
+    // Hand Abstraction: Rock === 1, Paper === 2, Scissors === 3
+    const bot_hand = Math.floor(Math.random() * 3);
+    if(play === 'Rock') {
+        if(bot_hand === 0) {
+            result = 'Tie';
+        } else if(bot_hand === 1) {
+            result = 'Lose';
+        } else {
+            result = 'Win';
+        }
+    } else if(play === 'Paper') {
+        if(bot_hand === 0){
+            result = 'Win';
+        } else if(bot_hand === 1) {
+            result = 'Tie';
+        } else {
+            result = 'Lose';
+        }
+    } else {
+        if(bot_hand === 0){
+            result = 'Lose';
+        } else if(bot_hand === 1) {
+            result = 'Win';
+        } else {
+            result = 'Tie';
+        }
+    }
+    return result;
+}
 
+let hand = window.prompt("Enter your move - Rock, Paper or Scissors:"); 
+let game_result = RPS2(hand); 
+console.log(game_result);
 
 
 
