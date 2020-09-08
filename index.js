@@ -148,7 +148,7 @@ function RPS(play) {
     return result;
 }
 
-
+console.log(RPS('Rock'));
 
 
 
@@ -159,13 +159,20 @@ function RPS(play) {
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+function km_miles(km){
+    return km * .621371;
+}
 
-
+const miles = km_miles(5);
+console.log(miles);
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
+function feet_cm(feet){
+    return feet * 30.48;
+}
 
+console.log(feet_cm(10));
 
 
 
@@ -173,8 +180,14 @@ function RPS(play) {
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
+function annoyingSong(number) {
+    for(let i = number; i > 0; i--) {
+        console.log(i, "bottles of soda on the wall,", i, "bottles of soda, take one down pass it around,", i - 1, "bottles of soda on the wall");
+    }
+}
 
+annoyingSong(5);
+  
 
 
 
@@ -186,8 +199,26 @@ function RPS(play) {
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
-  
 
+const letter_grade = (score) => {
+    let grade = null;
+    if(score > 100) {
+        console.log('There is no extra credit!')
+    }else if(score >= 90) {
+        grade = 'A';
+    }else if(score >= 80) {
+        grade = 'B';
+    }else if(score >= 70) {
+        grade = 'C';
+    }else if(score >= 60) {
+        grade = 'D';
+    }else {
+        grade = 'F';
+    }
+    return grade;
+}
+
+console.log(letter_grade(89));
   
   
 
